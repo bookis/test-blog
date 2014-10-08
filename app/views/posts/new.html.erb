@@ -1,11 +1,15 @@
 <h2>New Post</h2>
 
-<%= form_for @post do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<form action="/posts" method="POST">
+  Title <input type="text" name="banana[title]" value="<%= @post.title %>" />
+  Content <input type="text" name="banana[content]" value="<%= @post.content %>" />
 
-  <%= f.label :content %>
-  <%= f.text_area :content %>
+  <input type="submit"/>
+</form>
 
-  <%= f.submit "Create" %>
-<% end %>
+<!-- HTTP POST /posts
+...
+
+banana[title]=Day44&banana[content]=Blah
+{banana: {title: "Day44", content: "Blah"}}
+ -->

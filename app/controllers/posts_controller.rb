@@ -9,11 +9,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(params.require(:post).permit(:title, :content))
+    @post = Post.new(params.require(:banana).permit(:title, :content))
+    # {banana:         {title: "Day44",        content: "Blah"}}
     if @post.save
-      redirect_to root_path
+      redirect_to '/'
     else
-      
+      render :new
     end
   end
 
