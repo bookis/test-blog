@@ -1,8 +1,8 @@
 <h2>New Post</h2>
 
 <form action="/posts" method="POST">
-  Title <input type="text" name="banana[title]" value="<%= @post.title %>" />
-  Content <input type="text" name="banana[content]" value="<%= @post.content %>" />
+  Title <input type="text" name="post[title]" value="<%= @post.title %>" />
+  Content <input type="text" name="post[content]" value="<%= @post.content %>" />
 
   <input type="submit"/>
 </form>
