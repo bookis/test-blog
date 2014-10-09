@@ -2,7 +2,9 @@ Rails.application.routes.draw do
 
   get  "/posts",     to: "posts#index"
   post "/posts",     to: "posts#create"
-  get  "/posts/new", to: "posts#new"
+  get  "/posts/new", to: "posts#new", as: :new_post
+
+  get  "/posts/:id/edit", to: "posts#edit", as: :edit_post
 
   root "posts#index"
   # The priority is based upon order of creation: first created -> highest priority.
