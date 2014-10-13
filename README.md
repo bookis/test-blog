@@ -1,3 +1,1 @@
-== README
-
-This is the README.
+# Rails Blog
