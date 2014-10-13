@@ -7,6 +7,7 @@
     <%= post.content %>
     <%= link_to "Edit", edit_post_path(post.id) %>
     <hr>
+    <%= button_to "Delete", "/posts", method: :delete %>
   </article>
 <% end %>
 

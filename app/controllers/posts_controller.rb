@@ -8,11 +8,14 @@ class PostsController < ApplicationController
     @post = Post.new
   end
 
+  def show
+    @post = Post.find(params[:id])
+  end
+
   def create
     @post = Post.new(post_params)
-    # {banana:         {title: "Day44",        content: "Blah"}}
     if @post.save
-      redirect_to '/'
+      redirect_to root_path
     else
       render :new
     end
