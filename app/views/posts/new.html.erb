@@ -1,11 +1,14 @@
 <h2>New Post</h2>
-<ul>
-  <% @post.errors.each do |column, message| %>
-    <li>
-      <strong><%= column.capitalize %></strong> <%= message %>
-    </li>
-  <% end %>
-</ul>
+
+<% if @post.errors.any? %>
+  <ul class='error-messages'>
+    <% @post.errors.each do |column_name, message| %>
+      <li>
+        <strong><%= column_name.capitalize %></strong> <%= message %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
 
 <form action="/posts" method="POST">
   Title
