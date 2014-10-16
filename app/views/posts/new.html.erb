@@ -1,14 +1,6 @@
 <h2>New Post</h2>
 
-<% if @post.errors.any? %>
-  <ul class='error-messages'>
-    <% @post.errors.each do |column_name, message| %>
-      <li>
-        <strong><%= column_name.capitalize %></strong> <%= message %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
+<%= render "shared/error_messages", obj: @post %>
 
 <form action="/posts" method="POST">
   Title

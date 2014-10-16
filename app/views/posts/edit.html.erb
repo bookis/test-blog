@@ -1,5 +1,7 @@
 <h2>Edit '<%= @post.title %>'</h2>
 
+<%= render "shared/error_messages", obj: @post %>
+
 <form action="/posts/<%= @post.id %>" method="POST">
   <input type="hidden" name="_method" value="PUT">
   Title <input type="text" name="post[title]" value="<%= @post.title %>" />
